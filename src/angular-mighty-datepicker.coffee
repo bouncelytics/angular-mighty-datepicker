@@ -1,4 +1,4 @@
-angular.module "mightyDatepicker", ['pasvaz.bindonce']
+angular.module "mightyDatepicker", []
 
 angular.module("mightyDatepicker").directive "mightyDatepicker", ($compile) ->
   pickerTemplate = """
@@ -8,16 +8,16 @@ angular.module("mightyDatepicker").directive "mightyDatepicker", ($compile) ->
         <<
       </button>
       <div class="mighty-picker__month"
-        bindonce ng-repeat="month in months track by $index">
+        ng-repeat="month in months track by $index">
         <div class="mighty-picker__month-name" ng-bind="month.name"></div>
         <table class="mighty-picker-calendar">
           <tr class="mighty-picker-calendar__days">
-            <th bindonce ng-repeat="day in month.weeks[1]"
+            <th ng-repeat="day in month.weeks[1]"
               class="mighty-picker-calendar__weekday"
               bo-text="day.date.format('dd')">
             </th>
           </tr>
-          <tr bindonce ng-repeat="week in month.weeks">
+          <tr ng-repeat="week in month.weeks">
             <td
                 bo-class='{
                   "mighty-picker-calendar__day": day,
